@@ -1,0 +1,432 @@
+/* Estilos generales */
+body{
+  background-color: #f6f7f9;;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.layout{
+  width: 100%;
+  max-width: 100vw;
+  min-height: 101vh;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 25%; /* Las tres primeras columnas ocupan 75%, la última 25% */
+  grid-template-rows: 10vh 10vh auto 10vh; /* Definición de filas */
+  grid-template-areas: 
+  "header header header header"
+  "nav nav nav nav"
+  "content content content lateral"
+  "footer footer footer footer";
+}
+
+/* Estilos cabecera */
+.header{
+  grid-area: header ;
+  background-color: whitesmoke;
+  text-align: left;
+  font-style: italic;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; 
+  top: 0; /* Fija en la parte superior */
+  z-index: 100; /* Asegura que esté por encima del contenido */
+}
+
+/* .logo{
+  background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 300px;
+} */
+
+/* .play{
+  width: 0px;
+  height: 0px;
+  border-left: 12px solid white;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  margin-top: 15px;
+  margin-left: 16px;
+} */
+
+/* Estilos de la barra de navegación */
+.nav{
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+  position: sticky; /* Cambia a sticky */
+  top: 10vh; /* Espacio para el header */
+  z-index: 99; /* Asegura que esté por encima del contenido */
+}
+
+.nav > ul{
+  display: flex;
+  width: 45%;
+  justify-content: space-around;
+  /* justify-content: center; */
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav li{
+  padding: 10px;
+}
+
+.nav a{
+  display: block;
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 18px;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  font-weight: lighter;
+  transition: al 300ms;
+}
+
+.nav a:hover{
+  transform: scale(1.1, 1.1);
+}
+
+/*Estilos del contenido principal */
+.content{
+  border-right: 1px solid #ddd;
+  grid-area: content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: start;
+}
+
+.articulo-item{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 0 auto 20px auto;
+  padding: 4%;
+  /* width: 90%; */
+  display: flex;
+  justify-content: space-evenly;
+  max-height: 40vh;
+  width: -moz-available;
+  width: -webkit-fill-available;
+} 
+
+.jumbo{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  /* margin: 20px auto; */
+  margin: 0 auto;
+  padding: 4%;
+  flex-direction: column;
+  align-items: center;
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.inicio{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.inicio h1,
+.inicio p{
+  margin: 20px ;
+}
+
+.inicio a{
+  margin-bottom: 20px;
+}
+
+.crear{
+  width: 100%;
+  padding: 0;
+}
+
+.jumbo .mascara{
+  width: 100%;
+  overflow: hidden;
+}
+
+.jumbo h1{
+  font-size: 35px;
+}
+
+.jumbo p{
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: #605d5d;
+  text-align: justify;
+}
+
+.jumbo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 40vh;
+  object-position: center;
+}
+
+.articulo-item .mascara{
+  width: 30%;
+  overflow: hidden;
+}
+
+.articulo-item .mascara img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.datos{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100%; 
+}
+
+.articulo-item h3{
+  margin: 0;
+}
+
+.title a{
+  text-decoration: none;
+  color: black;
+}
+
+.title a:hover{
+  color: rgb(170, 65, 163);
+}
+
+.articulo-item p{
+  text-align: justify;
+  /* max-height: 44%; */
+  overflow: hidden;
+  color: #605d5d;
+}
+
+
+.botones{
+  display: flex;
+  margin: 0 20% 0 20%;
+  justify-content: space-evenly;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+.edit{
+  /* width: 100px; */
+  background-color: #0b70e1;
+  color: whitesmoke;
+  border: 0;
+  outline: none;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+  text-decoration: none;
+  min-width: 56px;
+}
+
+.edit:hover{
+  background-color: #e77b00;
+}
+
+.delete:hover{
+  background-color: #9b0202;
+}
+
+/* Estilos de la barra lateral */
+.lateral{
+  grid-area: lateral;
+  background: #f6f7f9;
+  /* border-left: 1px solid #ddd; */
+  padding: 20px;
+  height: max-content;
+}
+
+.lateral > div{
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+input[type="text"],
+input[type="file"],
+textarea{
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+/* Estilos del pie de página */
+.footer{
+  grid-area: footer;
+  background: #d1defa;
+  color: #454545;
+  border: 1px solid white;
+  text-align: center;
+  line-height: 68px;
+  padding-left: 25px;
+}
+
+/* Estilos de la pagina crear articulos */
+.formulario{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.resultado{
+  margin-top: 0;
+}
+
+.resultado.oculto {
+  text-align: center;
+  padding: 10px;
+  display: block; 
+}
+
+.resultado.exito {
+  display: block; /* Muestra el mensaje de éxito */
+  color: rgb(62, 130, 62); /* Estilo para mensaje de éxito */
+}
+
+.resultado.error {
+  display: block; /* Muestra el mensaje de error */
+  color: rgb(205, 72, 72); /* Estilo para mensaje de error */
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  margin: 1% 15%;
+}
+
+.form-group label{
+  /* width: 10%; */
+  display: block;
+  text-align: left;
+  color: #454545;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+input[type="file"]{
+  margin: 0;
+  width: auto;
+}
+
+.form-group textarea{
+  resize: none;
+  height: 20vh;
+}
+
+.center-button {
+  text-align: center;
+}
+
+.center-button input[type='submit'] {
+  display: inline-block;
+}
+
+
+@media (max-width: 900px){
+  .articulo-item{
+      margin: 0 auto 20px auto;
+  }
+}
+
+@media (max-width: 1000px){
+  .botones{
+    margin: 0;
+  }
+}
+
+/* Establece un diseño para pantallas pequeñas (ancho menor a 761px) */
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: 10vh 10vh max-content auto 10vh; /* Añade una fila para lateral */
+    grid-template-areas:
+      "header"
+      "nav"
+      "lateral"
+      "content"
+      "footer";
+  }
+  .lateral > div{
+    height: auto;
+  }
+
+  .header h1{
+    font-size: 24px;
+  }
+
+  .nav > ul{
+    width: 80%;
+  }
+}
+
+/* @media (max-width: 502px) {
+  .nav li{
+    padding: 5px;
+  }
+} */
+
+@media (max-width: 505px){
+  .header h1{
+    font-size: 19px;
+  }
+
+  .button, 
+  button, 
+  input[type="submit"], 
+  input[type="button"], 
+  .edit{
+    padding: 10px;
+  }
+}
+
+@media (max-width: 510px){
+  .nav > ul{
+    width: 100%;
+  }
+}
+
